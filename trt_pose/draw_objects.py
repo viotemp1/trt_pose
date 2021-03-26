@@ -1,26 +1,16 @@
 import cv2
-<<<<<<< HEAD
 import numpy as np
-=======
->>>>>>> a89b422e0d72c4d537d7d4f39d03589f7ac236c0
-
 
 class DrawObjects(object):
     
     def __init__(self, topology):
         self.topology = topology
-<<<<<<< HEAD
 #         self.output = {"image_shape":(), "circles": np.empty([0,2], np.int32), "lines": np.empty([0,4], np.int32)}
         
     def __call__(self, image, object_counts, objects, normalized_peaks):
         topology = self.topology
         output = {"image_shape":(), "circles": np.empty([0,2], np.uint16), "lines": np.empty([0,4], np.uint16)}
         output["image_shape"] = image.shape
-=======
-        
-    def __call__(self, image, object_counts, objects, normalized_peaks):
-        topology = self.topology
->>>>>>> a89b422e0d72c4d537d7d4f39d03589f7ac236c0
         height = image.shape[0]
         width = image.shape[1]
         
@@ -38,10 +28,7 @@ class DrawObjects(object):
                     x = round(float(peak[1]) * width)
                     y = round(float(peak[0]) * height)
                     cv2.circle(image, (x, y), 3, color, 2)
-<<<<<<< HEAD
                     output["circles"] = np.concatenate((output["circles"], [[x, y]]), axis=0)
-=======
->>>>>>> a89b422e0d72c4d537d7d4f39d03589f7ac236c0
 
             for k in range(K):
                 c_a = topology[k][2]
@@ -53,12 +40,8 @@ class DrawObjects(object):
                     y0 = round(float(peak0[0]) * height)
                     x1 = round(float(peak1[1]) * width)
                     y1 = round(float(peak1[0]) * height)
-<<<<<<< HEAD
                     cv2.line(image, (x0, y0), (x1, y1), color, 2)
                     output["lines"] = np.concatenate((output["lines"], [[x0, y0, x1, y1]]), axis=0)
         if len(output["circles"]) == 0 or len(output["lines"]):
             output = {}
         return output
-=======
-                    cv2.line(image, (x0, y0), (x1, y1), color, 2)
->>>>>>> a89b422e0d72c4d537d7d4f39d03589f7ac236c0
