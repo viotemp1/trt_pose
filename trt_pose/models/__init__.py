@@ -4,7 +4,7 @@ from .mnasnet import *
 import os
 
 if not os.path.exists(os.path.join(os.path.dirname(__file__), 'dla')):
-    os.system(f"git clone https://github.com/viotemp1/dla.git {os.path.dirname(__file__)}")
+    os.system(f"git clone https://github.com/viotemp1/dla.git {os.path.join(os.path.dirname(__file__), 'dla')}")
 from .dla import *
 
 MODELS = {
