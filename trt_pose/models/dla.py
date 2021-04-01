@@ -2,6 +2,9 @@ import sys
 import os
 import torch
 # https://github.com/ucbdrive/dla
+if not os.path.exists(os.path.join(os.path.dirname(__file__), 'dla')):
+    print("will install dla")
+    os.system("git clone https://github.com/viotemp1/dla.git")
 sys.path.append(os.path.join(os.path.dirname(__file__), 'dla'))
 import dla_up
 
