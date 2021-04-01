@@ -1,7 +1,11 @@
 from .resnet import *
 from .densenet import *
 from .mnasnet import *
-# from .dla import *
+import os
+
+if not os.path.exists("./dla/"):
+    os.system("git clone https://github.com/viotemp1/dla.git")
+from .dla import *
 
 MODELS = {
     'resnet18_baseline': resnet18_baseline,
@@ -22,10 +26,10 @@ MODELS = {
     'densenet169_baseline_att': densenet169_baseline_att,
     'densenet201_baseline_att': densenet201_baseline_att,
     'densenet161_baseline_att': densenet161_baseline_att,
-#     'dla34up_pose': dla34up_pose,
-#     'dla60up_pose': dla60up_pose,
-#     'dla102up_pose': dla102up_pose,
-#     'dla169up_pose': dla169up_pose,
+    'dla34up_pose': dla34up_pose,
+    'dla60up_pose': dla60up_pose,
+    'dla102up_pose': dla102up_pose,
+    'dla169up_pose': dla169up_pose,
     'mnasnet0_5_baseline_att': mnasnet0_5_baseline_att,
     'mnasnet0_75_baseline_att': mnasnet0_75_baseline_att,
     'mnasnet1_0_baseline_att': mnasnet1_0_baseline_att,

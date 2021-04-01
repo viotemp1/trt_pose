@@ -1,5 +1,5 @@
 import trt_pose.plugins
-
+#import plugins
 
 class ParseObjects(object):
     

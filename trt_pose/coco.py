@@ -5,12 +5,14 @@ import os
 import PIL.Image
 import json
 import tqdm
-import trt_pose
+#import trt_pose
 import trt_pose.plugins
+#import plugins
 import glob
 import torchvision.transforms.functional as FT
 import numpy as np
 from trt_pose.parse_objects import ParseObjects
+#from parse_objects import ParseObjects
 import pycocotools
 import pycocotools.coco
 import pycocotools.cocoeval
