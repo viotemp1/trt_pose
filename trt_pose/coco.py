@@ -231,7 +231,7 @@ class CocoDataset(torch.utils.data.Dataset):
             self.parts = cache['parts']
             self.filenames = cache['filenames']
             self.samples = cache['samples']
-            rint('Loading from cache file done!')
+            print('Loading from cache file done!')
             return
             
         with open(annotations_file, 'r') as f:
