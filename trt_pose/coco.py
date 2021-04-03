@@ -222,7 +222,7 @@ class CocoDataset(torch.utils.data.Dataset):
         tensor_cache_file = annotations_file + '.cache'
         
         if tensor_cache_file is not None and os.path.exists(tensor_cache_file):
-            print('Cachefile found.  Loading from cache file...')
+            #print('Cachefile found.  Loading from cache file...')
             cache = torch.load(tensor_cache_file)
             self.counts = cache['counts']
             self.peaks = cache['peaks']
@@ -231,7 +231,7 @@ class CocoDataset(torch.utils.data.Dataset):
             self.parts = cache['parts']
             self.filenames = cache['filenames']
             self.samples = cache['samples']
-            print('Loading from cache file done!')
+            #print('Loading from cache file done!')
             return
             
         with open(annotations_file, 'r') as f:
